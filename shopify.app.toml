@@ -1,0 +1,29 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "828caee8b5bdb807f29aed8f6d709585"
+name = "laravel"
+handle = "laravel-180"
+application_url = "https://never-assuming-toddler-pounds.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "mox-skincare.myshopify.com"
+include_config_on_deploy = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_content,read_metaobject_definitions,read_metaobjects,write_content,write_metaobject_definitions,write_metaobjects,write_products"
+
+[auth]
+redirect_urls = [
+  "https://never-assuming-toddler-pounds.trycloudflare.com/auth/callback",
+  "https://never-assuming-toddler-pounds.trycloudflare.com/auth/shopify/callback",
+  "https://never-assuming-toddler-pounds.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-07"
+
+[pos]
+embedded = false
