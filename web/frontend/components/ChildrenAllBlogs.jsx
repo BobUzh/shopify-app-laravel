@@ -1,30 +1,12 @@
+import React, { useEffect, useState } from "react";
 import { Modal, TitleBar, useAppBridge } from "@shopify/app-bridge-react";
 import { Box, Button, Text } from "@shopify/polaris";
 import { PlusIcon } from "@shopify/polaris-icons";
-import React, { useEffect, useState } from "react";
 
 export function ChildrenAllBlogs() {
     const app = useAppBridge();
     const [modalOpen, setModalOpen] = useState(false);
 
-    useEffect(() => {
-        function handleMessageFromModal(ev) {
-            console.log("Message received in main app:", ev.data);
-        }
-
-        window.addEventListener("message", handleMessageFromModal);
-        return () => {
-            window.removeEventListener("message", handleMessageFromModal);
-        };
-    }, []);
-
-    const sendMessageToApp = () => {
-        const modal = document.getElementById("my-modal");
-        modal.contentWindow.postMessage(
-            "Hi, this is the main app!",
-            location.origin,
-        );
-    };
     return (
         <div>
             <Box
@@ -43,9 +25,10 @@ export function ChildrenAllBlogs() {
                     Select Source
                 </Button>
             </Box>
-            <Modal id="my-modal" src="/" open={modalOpen}>
-                <Text as="p">text</Text>
+            <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
                 <TitleBar title="Title"></TitleBar>
+                <Text as="p">text</Text>
+                <Button onClick={() => setModalOpen(false)}>Close</Button>
             </Modal>
         </div>
     );

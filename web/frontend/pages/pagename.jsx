@@ -36,12 +36,10 @@ export default function PageName() {
             onSuccess: () => {
                 setIsLoading(false);
                 let arr = [];
-                let url = "https://admin.shopify.com/store/mox-skincare/blogs/";
-                console.log(url);
 
                 data?.blogs.map((e) =>
                     arr.push([
-                        <Link removeUnderline url={url + e.id}>
+                        <Link removeUnderline url="#">
                             {e.title}
                         </Link>,
                         "active",

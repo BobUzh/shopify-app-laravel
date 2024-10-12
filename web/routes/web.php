@@ -101,10 +101,24 @@ Route::get('/api/blogs', function (Request $request) {
     $session = $request->get('shopifySession'); // Provided by the shopify.auth middleware, guaranteed to be active
 
     $client = new Rest($session->getShop(), $session->getAccessToken());
-    dd($client);
     $result = $client->get('blogs');
 
     return response($result->getDecodedBody());
+})->middleware('shopify.auth');
+
+Route::get('/api/filter-details', function (Request $request) {
+    /** @var AuthSession */
+    $session = $request->get('shopifySession'); // Provided by the shopify.auth middleware, guaranteed to be active
+
+    $client = new Rest($session->getShop(), $session->getAccessToken());
+    $authors = $client->get('articles/authors');
+    $tags = $client->get('articles/tags');
+
+    Log::info('Це повідомлення для дебагу 1111');
+
+    // dd(authors);
+
+    return response($authors->getDecodedBody());
 })->middleware('shopify.auth');
 
 

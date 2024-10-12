@@ -3,7 +3,7 @@
 client_id = "828caee8b5bdb807f29aed8f6d709585"
 name = "laravel"
 handle = "laravel-180"
-application_url = "https://never-assuming-toddler-pounds.trycloudflare.com"
+application_url = "https://facility-rand-lending-statute.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "read_content,read_metaobject_definitions,read_metaobjects,write_conten
 
 [auth]
 redirect_urls = [
-  "https://never-assuming-toddler-pounds.trycloudflare.com/auth/callback",
-  "https://never-assuming-toddler-pounds.trycloudflare.com/auth/shopify/callback",
-  "https://never-assuming-toddler-pounds.trycloudflare.com/api/auth/callback"
+  "https://facility-rand-lending-statute.trycloudflare.com/auth/callback",
+  "https://facility-rand-lending-statute.trycloudflare.com/auth/shopify/callback",
+  "https://facility-rand-lending-statute.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
